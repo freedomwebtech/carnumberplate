@@ -64,7 +64,7 @@ while True:
            gray = cv2.bilateralFilter(gray, 15, 17, 17)
 
            text = pytesseract.image_to_string(gray).strip()
-           text = text.replace('(', '').replace(')', '').replace(',', '')
+           text = text.replace('(', '').replace(')', '').replace(',', '').replace(']','')
            if text not in processed_numbers:
               processed_numbers.add(text) 
               list1.append(text)
